@@ -271,6 +271,8 @@ html {
 .project-grid,
 .stats-row,
 .award-grid,
+.people-grid,
+.gallery-grid,
 .timeline,
 .section-cta,
 .contact-lead,
@@ -747,6 +749,8 @@ html {
   height: 36px;
   border-radius: 50%;
   border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -758,6 +762,123 @@ html {
 .footer-top:hover {
   border-color: var(--accent-border);
   color: var(--accent);
+}
+
+/* ---------- Page header (People, Gallery) ---------- */
+.page-hero {
+  max-width: var(--content-w);
+  margin-inline: auto;
+  padding: calc(var(--nav-h) + 56px) 32px 48px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin-top: 12px;
+}
+
+.page-lead {
+  margin-top: 14px;
+  font-size: 17px;
+  color: var(--text);
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* ---------- People ---------- */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.person-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent-border);
+}
+
+.person-avatar,
+.person-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+
+.person-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.person-photo {
+  object-fit: cover;
+}
+
+.person-card h3 {
+  font-size: 16px;
+}
+
+.person-role {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-mute);
+}
+
+/* ---------- Gallery ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-tile {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.gallery-tile img,
+.gallery-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, var(--accent-bg), var(--accent-2-bg));
+}
+
+.gallery-tile figcaption {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-mute);
+}
+
+@media (max-width: 780px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Reduced motion ---------- */
@@ -774,6 +895,8 @@ html {
   .btn,
   .research-card,
   .project-card,
+  .award-card,
+  .person-card,
   .contact-link,
   .nav-links a::after {
     transition: none !important;

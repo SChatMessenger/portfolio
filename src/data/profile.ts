@@ -48,6 +48,17 @@ export interface SocialLink {
   icon: 'mail' | 'github' | 'linkedin' | 'scholar' | 'x'
 }
 
+export interface Person {
+  name: string
+  role: string
+  photo?: string
+}
+
+export interface GalleryItem {
+  src: string
+  caption: string
+}
+
 export const profile = {
   name: 'Your Name',
   role: 'Ph.D. Researcher',
@@ -168,6 +179,26 @@ export const profile = {
       year: 2024,
     },
   ] satisfies Award[],
+
+  team: {
+    phdScholars: [
+      { name: 'Scholar Name One', role: 'Ph.D. Scholar, 2023 — Present' },
+      { name: 'Scholar Name Two', role: 'Ph.D. Scholar, 2024 — Present' },
+    ],
+    alumni: [
+      { name: 'Alumnus Name One', role: 'Ph.D. 2025 · now at Institution or Company' },
+      { name: 'Alumnus Name Two', role: 'M.Tech 2024 · now at Institution or Company' },
+    ],
+  } satisfies { phdScholars: Person[]; alumni: Person[] },
+
+  gallery: [
+    { src: '/gallery/photo-1.jpg', caption: 'Caption — event, location, and year.' },
+    { src: '/gallery/photo-2.jpg', caption: 'Caption — event, location, and year.' },
+    { src: '/gallery/photo-3.jpg', caption: 'Caption — event, location, and year.' },
+    { src: '/gallery/photo-4.jpg', caption: 'Caption — event, location, and year.' },
+    { src: '/gallery/photo-5.jpg', caption: 'Caption — event, location, and year.' },
+    { src: '/gallery/photo-6.jpg', caption: 'Caption — event, location, and year.' },
+  ] satisfies GalleryItem[],
 }
 
 export type Profile = typeof profile

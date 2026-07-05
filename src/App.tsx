@@ -1,28 +1,21 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { About } from './components/About'
-import { Awards } from './components/Awards'
-import { Contact } from './components/Contact'
-import { Education } from './components/Education'
 import { Footer } from './components/Footer'
-import { Hero } from './components/Hero'
 import { Nav } from './components/Nav'
-import { Projects } from './components/Projects'
-import { Publications } from './components/Publications'
-import { Research } from './components/Research'
+import { Gallery } from './pages/Gallery'
+import { Home } from './pages/Home'
+import { People } from './pages/People'
 
 function App() {
   return (
     <>
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Research />
-        <Publications />
-        <Projects />
-        <Awards />
-        <Education />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
       </main>
       <Footer />
     </>

@@ -1,15 +1,21 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { profile } from '../data/profile'
 import { IconClose, IconMenu } from './Icons'
 
-const links = [
-  { href: '#about', label: 'About' },
-  { href: '#research', label: 'Research' },
-  { href: '#publications', label: 'Publications' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#awards', label: 'Awards' },
-  { href: '#education', label: 'Education' },
-  { href: '#contact', label: 'Contact' },
+const sectionLinks = [
+  { id: 'about', label: 'About' },
+  { id: 'research', label: 'Research' },
+  { id: 'publications', label: 'Publications' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'awards', label: 'Awards' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
+]
+
+const pageLinks = [
+  { to: '/people', label: 'People' },
+  { to: '/gallery', label: 'Gallery' },
 ]
 
 export function Nav() {
@@ -23,14 +29,19 @@ export function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a href="#top" className="nav-mark" onClick={() => setOpen(false)}>
+        <Link to="/#top" className="nav-mark" onClick={() => setOpen(false)}>
           {initials}
-        </a>
+        </Link>
         <nav className={`nav-links ${open ? 'is-open' : ''}`}>
-          {links.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+          {sectionLinks.map((link) => (
+            <Link key={link.id} to={`/#${link.id}`} onClick={() => setOpen(false)}>
               {link.label}
-            </a>
+            </Link>
+          ))}
+          {pageLinks.map((link) => (
+            <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>
+              {link.label}
+            </Link>
           ))}
         </nav>
         <button
@@ -45,4 +56,3 @@ export function Nav() {
     </header>
   )
 }
-

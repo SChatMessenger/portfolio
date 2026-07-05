@@ -7,10 +7,14 @@ export function Footer() {
       <p>
         © {new Date().getFullYear()} {profile.name}
       </p>
-      <a href="#top" className="footer-top" aria-label="Back to top">
+      <button
+        type="button"
+        className="footer-top"
+        aria-label="Back to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
         <IconArrowUp />
-      </a>
+      </button>
     </footer>
   )
 }
-
