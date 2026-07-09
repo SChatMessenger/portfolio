@@ -87,3 +87,28 @@ export function IconArrowUp({ className }: IconProps) {
   )
 }
 
+export function IconChevronDown({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
+
+export function IconSun({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx="12" cy="12" r="4.5" />
+      <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+    </svg>
+  )
+}
+
+export function IconMoon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" strokeLinejoin="round" />
+    </svg>
+  )
+}
+

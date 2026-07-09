@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Too large for GitHub (667MB, exceeds the 100MB hard limit).
+# Compress before re-adding, or host externally.
+public/6.mp4

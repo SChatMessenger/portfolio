@@ -6,7 +6,7 @@ export function About() {
   const { ref: factsRef, inView: factsInView } = useInView<HTMLDListElement>()
 
   return (
-    <section id="about" className="section">
+    <section className="section">
       <div className="section-head">
         <h2>About</h2>
       </div>
